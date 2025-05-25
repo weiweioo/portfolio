@@ -1,0 +1,601 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+// ===== 變數 =====
+$mainColor: #645A50;
+$secColor: #776C61;
+$thirdColor: #61725D;
+$fourthColor: #73876D;
+$linkColor:#7C8A76;
+$bgColor: #fffef8;
+$textColor:#333;
+$mainFont: "Roboto",
+"Noto Sans TC",
+sans-serif;
+
+
+
+// ===== 全域 Reset 與字型 =====
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  transition: all 0.5s ease-in-out;
+}
+
+body {
+  font-family: $mainFont;
+  line-height: 1.6;
+  color: $textColor;
+  background-color: $bgColor;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url('../images/main_bg.jpg');
+    background-position: center;
+    background-size: auto;
+    background-repeat: repeat;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: block;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    opacity: 0.3;
+
+  }
+}
+
+
+.outerWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+}
+
+header {
+  width: 30%;
+  background-color: #8B8377;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 2;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .wrap {
+    position: relative;
+    padding: 40px;
+
+    @media (max-width: 768px) {
+      padding: 40px 20px;
+    }
+
+  }
+
+  .ImgBox {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    @media (max-width: 768px) {
+      width: 35%;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 480px) {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+
+    .Img {
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        display: block;
+        z-index: 6;
+        position: relative;
+      }
+    }
+  }
+
+  .TxtBox {
+    text-align: center;
+    margin-top: 30px;
+    z-index: 3;
+
+    .decoTitle {
+      font-size: 20px;
+      letter-spacing: 3px;
+
+    }
+
+    .nameTitle {
+      font-size: 30px;
+      font-weight: bold;
+      color: rgba(#f4ede3, 0.6);
+      margin-left: 5px;
+      letter-spacing: 5px;
+
+
+    }
+
+    .text {
+      font-size: 20px;
+      color: #333;
+      margin-top: 5px;
+    }
+  }
+
+  .socialList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: $mainColor;
+    margin-top: 10px;
+
+    .item {
+      font-size: 16px;
+      margin-bottom: 2px;
+      color: #333;
+
+      a {
+        color: #333;
+
+        &:hover {
+          color: $mainColor;
+        }
+      }
+    }
+
+  }
+
+
+}
+
+main {
+  width: calc(100% - 30%);
+  // background-color: #E4E1DB;
+  margin: 0 0 0 auto;
+  overflow-y: auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 0;
+
+  }
+
+  .mainBox {
+    position: relative;
+    padding: 0 80px 180px;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 0 20px;
+
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url('../images/deco_people.svg');
+      background-position: bottom;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+      display: block;
+      bottom: 10px;
+      right: 0px;
+      pointer-events: none;
+      opacity: 1;
+      z-index: 4;
+
+      @media (max-width: 640px) {
+        display: none;
+      }
+
+    }
+
+    .bg {
+      position: absolute;
+      bottom: -13%;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      pointer-events: none;
+
+      @media (max-width: 1280px) {
+        bottom: -5%;
+
+      }
+
+      @media (max-width: 640px) {
+        display: none;
+      }
+
+
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url('../images/deco_bg_left.svg');
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+        display: block;
+        bottom: 0;
+        left: -15%;
+        z-index: 2;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        background-image: url('../images/deco_bg_right.svg');
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+        display: block;
+        bottom: 0;
+        right: -50%;
+      }
+    }
+  }
+}
+
+// ===== About 區 (關於我) =====
+.aboutArea {
+  padding: 60px 0 30px;
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    display: inline-block;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+}
+
+// ===== Work 區 (工作經歷) =====
+.workArea {
+  padding: 30px 0 60px;
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    display: inline-block;
+  }
+
+  .text {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .workBox {
+    width: 100%;
+
+    &.aniStart {
+      .workList {
+        &::before {
+          height: 97%;
+        }
+      }
+    }
+  }
+
+  .workList {
+    width: 100%;
+    position: relative;
+    padding-left: 20px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 0%;
+      top: 15px;
+      left: 5px;
+      bottom: 0;
+      background-color: rgba($mainColor, 0.5);
+      transition: all 0.5s ease-in-out;
+    }
+
+    .workItem {
+      position: relative;
+      width: 100%;
+      margin-bottom: 20px;
+      padding-left: 10px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: -15px;
+        margin: auto 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7px 0 7px 10px;
+        border-color: transparent transparent transparent $mainColor;
+      }
+
+      .titleBox {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+        margin-bottom: 15px;
+
+        .company {
+          display: block;
+          width: 100%;
+          font-size: 20px;
+          font-weight: 500;
+          margin-bottom: 0px;
+        }
+
+        .subTitle,
+        .time {
+          display: inline-block;
+          width: auto;
+        }
+
+        .subTitle {
+          margin: 0 5px 0 0;
+          font-weight: 600;
+          color: $mainColor;
+        }
+
+        .time {
+          color: $secColor;
+
+          strong {
+            font-weight: 700;
+          }
+        }
+      }
+
+      .infoList {
+        width: 100%;
+
+        .infoItem {
+          width: 100%;
+          position: relative;
+          padding-left: 12px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            width: 4px;
+            height: 4px;
+            top: 10px;
+            left: 0px;
+            background-color: $mainColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ===== Project 區 (上線作品) =====
+.projectArea {
+  padding: 0 0 100px 0;
+  // background-color: #fff;
+  position: relative;
+  z-index: 6;
+
+  @media (max-width: 640px) {
+    padding: 0 0 60px 0;
+
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    display: inline-block;
+  }
+
+  .projectBox {
+    .projectList {
+      display: flex;
+      flex-wrap: wrap;
+
+
+
+      .projectItem {
+        position: relative;
+        transition: all 0.5s;
+        padding: 5px;
+        width: calc(100% / 3);
+
+        @media (max-width: 768px) {
+          width: calc(100% / 2);
+        }
+
+        @media (max-width: 640px) {
+          width: 100%;
+        }
+
+        .item {
+          position: relative;
+          border: 1px solid #e3e3e3;
+          padding: 5px;
+          border-radius: 3px;
+          // width: 400px;
+          // height: 300px;
+          transition: all 0.5s;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          width: 100%;
+
+          &:hover {
+            transform: translateY(-5px);
+
+            .Img {
+              &::before {
+
+                opacity: 1;
+              }
+            }
+
+            .Txt {
+              opacity: 1;
+
+            }
+          }
+
+          .Img {
+
+            overflow: hidden;
+            transition: all 0.5s;
+            position: relative;
+
+            &::before {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-color: rgba(#000, 0.7);
+              opacity: 0;
+              transition: all 0.5s;
+              pointer-events: none;
+
+
+            }
+
+            img {
+              display: block;
+              width: 100%;
+            }
+          }
+
+          .Txt {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: all 0.5s;
+            letter-spacing: 1.5px;
+            pointer-events: none;
+
+            .projectTitle {
+              font-size: 20px;
+              font-weight: 500;
+              margin-bottom: 10px;
+            }
+
+            .skil {
+              font-weight: normal;
+              font-size: 16px;
+            }
+
+            .btnBox {
+              margin-top: 20px;
+              transition: all 0.5s ease-in-out;
+
+              a {
+                text-decoration: none;
+                font-size: 0.9rem;
+                color: #fff;
+                padding: 8px 20px;
+                border-radius: 3px;
+                pointer-events: auto;
+                position: relative;
+                border: 1px solid #fff;
+                transition: all 0.5s ease-in-out;
+
+              }
+
+              &:hover {
+                a {
+                  border: 1px solid #fff;
+                  background-color: #fff;
+                  color: $mainColor;
+                }
+              }
+            }
+          }
+        }
+
+        a.linkWrap {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+// ===== Footer =====
+footer {
+  padding: 16px 0;
+  background-color: $mainColor;
+
+
+  .socialList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #F9F3EF;
+
+    .item {
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+
+  }
+}
